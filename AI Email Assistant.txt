@@ -1,0 +1,61 @@
+AI Email Assistant
+
+1.starting with the creating empty folder with the name AI email assistant.
+2. In the folder created the file backend.
+3. Using the visual studio for the building project (IDE).
+4. In the visual studio developer PowerShell i created the virtual environment for the projet using (python -m venv venv).after that running the venv files using (.\venv\Scripts\Activate.ps1) then the terminal changes to the (venv) terminal.
+5. in that venv terminal used to install the dependencies (pip install fastapi uvicorn). Then checks the dependencies to check this (pip show fastapi) and (pip show uvicorn) it's shows the version where it is installed.
+6.Creating the main.py file in the backend write the code. that will check and create the FastAPI application.it checks the someone sends a GET request to /api/health,execute health_check() it returns in the JSON format.
+7.To run this server use :--> uvicorn main:app --reload
+8.Error: The main problem is the policy required problem in the Microsoft visual studio to overcome this using the command (Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass) and then running the normal venv command (.\venv\Scripts\Activate.ps1)
+9.Now run the project using the command (python -m uvicorn main:app --reload) and it running it give the link open the and link attach the this /api/health link=(127.0.0.1:8000/api/health) and then now it shows the status healthy and service is ai email assistance.
+ when you add the 127.0.0.1:8000/docs it opens the swagger ui.
+for these steps are used to open and connect the ui and creating project folders and virtual environment .
+step 3: 10. Now creating the two files that are congif.py and .env files for creating the gemini api key and that config that api key. Now we need to install the (python-dotenv).after installing creaing the dotenv file in the backend.and config.py file creating importing the .env and load_dotenv().creating the .gitignore file to avoid the sensitive information not put in the git hub.
+11.Now using the ollama for the LLM and for generation for that we need to install the packages httpx(pip install httpx) and for details of httpx (pip show httpx). Next creating the file (ollama_service.py).Write the code in the file to connect the ollama and genearate the response.
+12.Connect Ollama to FastAPI for that ollama_service to put in the main.py and creating the post api to get the response.
+13. In the main.py creating the fast api's and checking it in the swagger and the models.py file created the classes using the pydantic it is used for the validating the mail contents as BaseModel.Email — validates the incoming email.
+EmailAnalysis — defines the summary, category, priority, and action requirement.
+EmailClassification — defines the category returned by the classification endpoint. In models.py created the models to understand the email.
+Email Analysis: Provides an overall understanding of an email, including its summary, category, priority (Low/Medium/High), and whether action is required.
+Email Summarization: Converts the email into a short paragraph.
+Email Classification: Identifies the email's main category.
+Action-Item Extraction: Extracts specific tasks, deadlines, and assignees.
+
+
+14.FRONTEND
+creating the frontend folder and in that folder creating the file package.json.
+The package.json file defines your React project's name, dependencies, and commands for running the frontend.
+- React: Builds the interactive email assistant interface.
+- Vite: Runs the frontend development server and builds the production version.
+- Lucide React: Provides icons for the interface.
+- Port 5133: Matches the frontend port currently allowed by your FastAPI backend's CORS configuration.
+
+Now creating the HTML file. -->  This is the main HTML page that loads your React application in the browser.
+What does this file do?
+- <div id="root"></div> is where React displays the user interface.
+- /src/main.jsx will be the JavaScript entry point for our React application.
+- The title and description identify your application in the browser.
+
+15.Now creating the src folder in the frontend folder and in the src folder creating the file main.jsx.
+What does this code do?
+- createRoot tells React where to render the application.
+- App.jsx will contain the main AI Email Assistant interface.
+- styles.css will control the application's appearance.
+- React.StrictMode helps identify potential problems during development.
+16. In src folder in another file that is app.jsx.
+What we've built
+- Five selectable feature tabs.
+- A welcome section and application header.
+- A workspace that changes its heading and description when you select a tab.
+- A placeholder for the email form and AI results.
+17.Now adding the styles for the frontend styles.css
+What this stylesheet adds
+- Dark navy background with subtle gradients.
+- Purple accents and polished active tabs.
+- Responsive layout for desktop and mobile.
+- Separate workspace panel and clear typography.
+- Hover effects and a local-AI status indicator.
+
+18.Now installing the frontend dependencies. first changing the navigation to the path of the project (cd "C:\Users\Shiva Sai Ganesh\OneDrive\Desktop\AI\AI Email Assistant\frontend") and next running the checking the node.js and npm (node -v) and (mpn -v)
+
